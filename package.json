@@ -1,0 +1,16 @@
+{
+  "name": "english-dictionary-open-source",
+  "version": "1.0.0",
+  "description": "An open source English language dictionary with 176,023 definitions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  }
+}
