@@ -33,3 +33,7 @@
 - [OPAL Spoken Single Words PDF](opal_spoken_single_words.pdf)
 - [OPAL Written Phrases PDF](opal_written_phrases.pdf)
 - [OPAL Written Single Words PDF](opal_written_single_words.pdf)
+
+## Development
+
+- Update file `bun scripts/oxford_3000_5000.ts`

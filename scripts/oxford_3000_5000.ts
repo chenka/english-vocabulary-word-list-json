@@ -1,7 +1,10 @@
 import fs from "fs"
+import path from "path"
 
-// Read Oxford dictionary data from file
-const oxfordDictData = fs.readFileSync("oxford_dict.json", "utf-8")
+const oxfordDictData = fs.readFileSync(
+  path.resolve(__dirname, "../oxford_dict.json"),
+  "utf-8"
+)
 const oxfordDict = JSON.parse(oxfordDictData)
 
 const ankiStartContent = `
@@ -9,11 +12,11 @@ const ankiStartContent = `
 #html:true
 `
 function main(fileName: string) {
-  const text = fs.readFileSync(fileName, "utf-8")
-  const oxford3000List = text.split("\n").map((word) => word.trim())
-
+  const filePath = path.resolve(__dirname, "..", fileName)
+  const text = fs.readFileSync(filePath, "utf-8")
+  const oxfordList = text.split("\n").map((word) => word.trim())
   const filteredWords = oxfordDict.filter((entry) => {
-    return oxford3000List.includes(entry.word.toLowerCase())
+    return oxfordList.includes(entry.word.toLowerCase())
   })
 
   const ankiData = formatDefinitionText(
@@ -23,10 +26,9 @@ function main(fileName: string) {
         .join("\n")
   )
 
-  const basefileName = fileName.replace(".txt", "")
-  writeJSONFile(`${basefileName}.json`, filteredWords)
+  const basefileName = fileName.replace(".txt", "").replace("_words", "")
+  writeJSONFile(`${basefileName}_dictionary.json`, filteredWords)
   writeAnkiFile(`${basefileName}.anki.txt`, ankiData)
-  console.log(ankiData)
 }
 
 function formatDefinitionText(input: string): string {
@@ -39,11 +41,13 @@ function formatDefinitionText(input: string): string {
   return formattedText
 }
 function writeJSONFile(fileName: string, data) {
+  console.log("Writing JSON file:", fileName)
   fs.writeFileSync(fileName, JSON.stringify(data, null, 2))
 }
 function writeAnkiFile(fileName: string, ankiData: string) {
+  console.log("Writing Anki file:", fileName)
   fs.writeFileSync(fileName, ankiData)
 }
 
-main("oxford_3000.txt")
-main("oxford_5000.txt")
+main("oxford_3000_words.txt")
+main("oxford_5000_words.txt")
