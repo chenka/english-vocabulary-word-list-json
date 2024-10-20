@@ -11,7 +11,6 @@
 - [Oxford 3000 PDF](oxford_3000.pdf)
 - [Oxford 3000 Dictionary JSON](oxford_3000_dictionary.json)
 - [Oxford 3000 Anki](oxford_3000.anki.txt)
-- [Oxford 3000 PDF](oxford_3000_dictionary.pdf)
 - [Oxford 3000 by CEFR level PDF](oxford_5000_by_cefr_level.pdf)
 
 ## Oxford 5000 excluding Oxford 3000
