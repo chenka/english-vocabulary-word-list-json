@@ -1,16 +1,12 @@
 {
-  "name": "english-dictionary-open-source",
+  "name": "english-vocabulary-word-list-json",
   "version": "1.0.0",
-  "description": "An open source English language dictionary with 176,023 definitions.",
-  "main": "index.js",
+  "description": "English Vocabulary Word List JSON",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "sqlite": "^5.1.1",
-    "sqlite3": "^5.1.7"
-  }
+  "dependencies": {}
 }
